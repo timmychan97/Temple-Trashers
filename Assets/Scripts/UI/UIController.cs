@@ -10,6 +10,7 @@ public class UIController : MonoBehaviour
     public List<SpriteRenderer> iconHolders;
     void Start()
     {
+        LeanTween.scale(gameObject, new Vector3(1, 1, 1), 0.5f).setEaseInOutBounce();
         if (towers.Length == 4 && menuSegments.Length == 4)
         {   
             for (int i = 0; i < 4; i++)
