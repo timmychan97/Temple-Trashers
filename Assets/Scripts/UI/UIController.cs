@@ -7,15 +7,14 @@ public class UIController : MonoBehaviour
     public TowerScript[] towers;
     public GameObject[] menuSegments;
     private List<GameObject> towersInMenu = new List<GameObject>();
-
-
+    public List<SpriteRenderer> iconHolders;
     void Start()
     {
         if (towers.Length == 4 && menuSegments.Length == 4)
-        {
+        {   
             for (int i = 0; i < 4; i++)
             {
-                menuSegments[i].GetComponentInChildren<SpriteRenderer>().sprite = towers[i].icon;
+                iconHolders[i].sprite = towers[i].icon;
                 //menuSegments[i].setIcon(towers[i].icon);
             }
         }
