@@ -1,6 +1,10 @@
-# HackerSpace NTNU Couch Co-Op Tower Defense
-TODO: skriv om prosjektet
+# HackerSpace - Spillprosjekt
+
+## Working Title: Right in the Temple
+A chaotic Couch Co-Op Tower Defense with friendly fire.
+
 
 ---
+Consult the github wiki for more info.
 
-*[Guide for utvikling](Assets/README.md)*
+*[Guide for development](Assets/README.md)*
