@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 
 
-public class UnigolemController : MonoBehaviour
+public class UnigolemController : Enemy
 {
     [SerializeField]
     private Transform model;
@@ -16,16 +16,11 @@ public class UnigolemController : MonoBehaviour
     private float tiltAngleFront = 30f;
 
     [SerializeField]
-    private Animator anim;
-
-    [SerializeField]
     private float damage;
 
     [SerializeField]
     private float detonationDistance = 2f;
 
-    private Transform baseTransform;
-    private NavMeshAgent agent;
     private HealthLogic healthLogic;
 
     private Vector3 lastForward;
@@ -68,8 +63,11 @@ public class UnigolemController : MonoBehaviour
 
         model.localRotation = Quaternion.Euler(forwardAngle, 0, sidewaysAngle);
 
-        if (Vector3.Distance(transform.position, baseTransform.position) < detonationDistance)
-            Detonate();
+        if(baseTransform)
+        {
+            if (Vector3.Distance(transform.position, baseTransform.position) < detonationDistance)
+                Detonate();
+        }
     }
 
     private void Detonate()
